@@ -1,0 +1,130 @@
+# @package _global_
+
+# specify here default configuration
+# order of defaults determines the order in which configs override each other
+defaults:
+  - _self_
+  - datamodule: seasfire_spatial.yaml
+  - model: seasfire_unet.yaml
+  - callbacks: default.yaml
+  - logger: null # set logger here or use command line (e.g. `python train.py logger=tensorboard`)
+  - trainer: default.yaml
+  - paths: default.yaml
+  - extras: default.yaml
+  - hydra: default.yaml
+
+  # experiment configs allow for version control of specific hyperparameters
+  # e.g. best hyperparameters for given model and datamodule
+  - experiment: null
+
+  # config for hyperparameter optimization
+  - hparams_search: null
+
+  # optional local config for machine/user specific settings
+  # it's optional since it doesn't need to exist and is excluded from version control
+  - optional local: default.yaml
+
+  # debugging config (enable through command line, e.g. `python train.py debug=default)
+  - debug: null
+
+# task name, determines output directory path
+task_name: "train"
+
+ds_path : ${oc.env:DATASET_PATH}
+ds_path_global : ${oc.env:DATASET_PATH_GLOBAL}
+
+# datacube vars
+# Spatio-temporal: ['cams_co2fire', 'cams_frpfire', 'drought_code_max', 'drought_code_mean', 'fcci_ba', 'fcci_fraction_of_burnable_area', 'fcci_fraction_of_observed_area', 'fcci_number_of_patches', 'fwi_max', 'fwi_mean', 'gfed_ba', 'gwis_ba', 'lai', 'lccs_class_0', 'lccs_class_1', 'lccs_class_2', 'lccs_class_3', 'lccs_class_4', 'lccs_class_5', 'lccs_class_6', 'lccs_class_7', 'lccs_class_8', 'lst_day', 'mslp', 'ndvi', 'pop_dens', 'rel_hum', 'skt', 'ssr', 'ssrd', 'sst', 'swvl1', 't2m_max', 't2m_mean', 't2m_min', 'tp', 'vpd', 'ws10']
+# Spatial: ['area', 'gfed_region', 'lsm']
+# Temporal: ['fcci_ba_valid_mask', 'gfed_ba_valid_mask', 'gwis_ba_valid_mask', 'oci_censo', 'oci_ea', 'oci_epo', 'oci_gmsst', 'oci_nao', 'oci_nina34_anom', 'oci_pdo', 'oci_pna', 'oci_soi', 'oci_wp']
+
+
+input_vars:
+  [
+#    'cams_co2fire',
+#    'cams_frpfire',
+#    'drought_code_max',
+#    'drought_code_mean',
+#    'fcci_ba',
+#    'fcci_fraction_of_burnable_area',
+#    'fcci_fraction_of_observed_area',
+#    'fcci_number_of_patches',
+#    'fwi_max',
+#    'fwi_mean',
+#    'gfed_ba',
+#    'gwis_ba',
+#    'lai',
+#    'lccs_class_0',
+#    'lccs_class_1',
+#    'lccs_class_2',
+#    'lccs_class_3',
+#    'lccs_class_4',
+#    'lccs_class_5',
+#    'lccs_class_6',
+#    'lccs_class_7',
+#    'lccs_class_8',
+    'lst_day',
+    'mslp',
+    'ndvi',
+    'pop_dens',
+    # 'rel_hum',
+#    'skt',
+#    'ssr',
+    'ssrd',
+    'sst',
+   'swvl1',
+#    't2m_max',
+    't2m_mean',
+#    't2m_min',
+    'tp',
+    'vpd',
+#    'ws10'
+  ]
+
+positional_vars: ['cos_lat', 'sin_lat', 'cos_lon', 'sin_lon']
+#positional_vars: []
+log_transform_vars: [tp, pop_dens]
+
+
+oci_vars: [
+  'oci_censo',
+  'oci_ea',
+  'oci_epo',
+  'oci_gmsst',
+  'oci_nao',
+  'oci_nina34_anom',
+  'oci_pdo',
+  'oci_pna',
+  'oci_soi',
+  'oci_wp'
+]
+
+oci_lag: 10
+
+patch_size: [1, 80, 80]
+# What is the target variable?
+# One of 'cams_co2fire', 'cams_frpfire', 'fcci_ba', 'gfed_ba', 'gwis_ba'
+target : 'gwis_ba'
+
+# How many weeks ahead to predict the target (!!! POSITIVE VALUES !!!)
+target_shift : 1
+
+# tags to help you identify your experiments
+# you can overwrite this in experiment configs
+# overwrite from command line with `python train.py tags="[first_tag, second_tag]"`
+# appending lists from command line is currently not supported :(
+# https://github.com/facebookresearch/hydra/issues/1547
+tags: ["dev"]
+
+# set False to skip model training
+train: True
+
+# evaluate on test set, using best model weights achieved during training
+# lightning chooses best weights based on the metric specified in checkpoint callback
+test: True
+
+# simply provide checkpoint path to resume training
+ckpt_path: null
+
+# seed for random number generators in pytorch, numpy and python.random
+seed: 42

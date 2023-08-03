@@ -1,0 +1,12 @@
+_target_: src.datamodules.seasfire_spatial_datamodule.SeasFireSpatialDataModule
+ds_path: ${ds_path}
+input_vars : ${input_vars}
+positional_vars : ${positional_vars}
+# Target can be one of BAs_GWIS, BurntArea, frpfire, co2fire, FCCI_BA, co2fire
+target : ${target}
+task: regression
+# How many weeks to look forward in time
+target_shift: ${target_shift}
+batch_size: 128
+num_workers: 8
+pin_memory: True

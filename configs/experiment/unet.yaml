@@ -1,0 +1,17 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=example
+
+defaults:
+  - override /datamodule: seasfire_spatial.yaml
+  - override /model: seasfire_unet.yaml
+  - override /callbacks: default.yaml
+  - override /trainer: default.yaml
+
+
+positional_vars : []
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+

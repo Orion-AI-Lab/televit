@@ -1,0 +1,11 @@
+_target_: src.models.seasfire_vit_global.plUNET
+input_vars: ${input_vars}
+positional_vars : ${positional_vars}
+patch_size: ${patch_size}
+lr: 0.0001
+weight_decay: 0.000001
+loss: 'ce'
+encoder: 'efficientnet-b1'
+use_global_input: True
+global_patch_size: null
+sea_masked: False

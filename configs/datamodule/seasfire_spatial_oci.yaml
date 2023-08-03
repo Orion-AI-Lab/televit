@@ -1,0 +1,16 @@
+_target_: src.datamodules.seasfire_spatial_oci_datamodule.SeasFireSpatialOciDataModule
+ds_path: ${ds_path}
+input_vars : ${input_vars}
+positional_vars : ${positional_vars}
+oci_vars : ${oci_vars}
+oci_lag : ${oci_lag}
+# Target can be one of BAs_GWIS, BurntArea, frpfire, co2fire, FCCI_BA, co2fire
+target : ${target}
+# How many weeks to forecast forward in time
+target_shift: ${target_shift}
+random_crop: False
+batch_size: 128
+patch_size: ${patch_size}
+num_workers: 8
+pin_memory: True
+debug: False
