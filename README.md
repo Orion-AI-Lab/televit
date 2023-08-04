@@ -8,7 +8,7 @@ This is the official code repository of the [TeleViT paper](https://arxiv.org/ab
 Figure: TeleViT Architecture combining local input, with global input and teleconnection indices.
 
 Authors: [Ioannis Prapas](https://iprapas.github.io) (1, 3), [Nikolaos-Ioannis Bountos](https://ngbountos.github.io/) (1, 2), 
-[Spyros Kondylatos](https://github.com/skondylatos/) (1, 3), [Dimitrios Michail](https://github.com/d-michail) (3), [Gustau Camps-Valls](https://www.uv.es/gcamps/) (2), [Ioannis Papoutsis](https://scholar.google.gr/citations?user=46cBUO8AAAAJ) (1)
+[Spyros Kondylatos](https://github.com/skondylatos/) (1, 3), [Dimitrios Michail](https://github.com/d-michail) (2), [Gustau Camps-Valls](https://www.uv.es/gcamps/) (2), [Ioannis Papoutsis](https://scholar.google.gr/citations?user=46cBUO8AAAAJ) (1)
 
 (1) Orion Lab, IAASARS, National Observatory of Athens
 
