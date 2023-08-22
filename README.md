@@ -66,7 +66,7 @@ To run the TeleViT experiments:
 bash scripts/televit_experiments.sh
 ```
 
-## Note on Resources needed
+## Notes on Resources needed
 
 - RAM memory: The code uses about 100GB of RAM to load the dataset into memory. This makes the process slow to start (waiting to preprocess the dataset and load it). However, it allows for the flexibility to change the ML dataset between runs, apply any kind of preprocessing, forecasting in different time horizons, adding/removing variables. 
 
