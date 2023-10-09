@@ -1,6 +1,8 @@
 # TeleViT: Teleconnection-driven Transformers Improve Subseasonal to Seasonal Wildfire Forecasting
 
-This is the official code repository of the [TeleViT paper](https://arxiv.org/abs/2306.10940), accepted at ICCV 2023 [hadr.ai workshop](https://www.hadr.ai/).
+🥇 **Best Paper Award at [AI+HADR Workshop](https://www.hadr.ai/iccv23/accepted-papers-iccv23), ICCV 2023**
+
+This is the official code repository of the [TeleViT paper](https://arxiv.org/abs/2306.10940), accepted at ICCV 2023 [hadr.ai workshop][hadr.ai workshop](https://www.hadr.ai/).
 
 🌐 Paper Website: https://orion-ai-lab.github.io/televit/
 
@@ -18,7 +20,7 @@ Authors: [Ioannis Prapas](https://iprapas.github.io) (1, 3), [Nikolaos-Ioannis B
 
 ## Prerequisites
 
-Before running the code, you need to install the requiremetns, download the data, preprocess them and create the .env file.
+Before running the code, you need to install the requirements, download the data, preprocess them and create the .env file.
 
 The code uses ashleve's pytorch lightning hydra template https://github.com/ashleve/lightning-hydra-template. It is worth reading the [template's README](./README_template.md) before trying to run the code.
 
