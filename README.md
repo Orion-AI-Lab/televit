@@ -1,8 +1,8 @@
 # TeleViT: Teleconnection-driven Transformers Improve Subseasonal to Seasonal Wildfire Forecasting
 
-🥇 **Best Paper Award at [AI+HADR Workshop](https://www.hadr.ai/iccv23/accepted-papers-iccv23), ICCV 2023**
+🥇 **Best Paper Award at [AI+HADR Workshop](https://www.hadr.ai/previous-versions/iccv-2023/accepted-papers-iccv23), ICCV 2023**
 
-This is the official code repository of the [TeleViT paper](https://arxiv.org/abs/2306.10940), accepted at ICCV 2023 [hadr.ai workshop][hadr.ai workshop](https://www.hadr.ai/).
+This is the official code repository of the [TeleViT paper](https://arxiv.org/abs/2306.10940), accepted at ICCV 2023 [hadr.ai workshop][hadr.ai workshop](https://www.hadr.ai/previous-versions/iccv-2023/accepted-papers-iccv23).
 
 🌐 Paper Website: https://orion-ai-lab.github.io/televit/
 
